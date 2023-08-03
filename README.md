@@ -1,4 +1,4 @@
-# Start Stop RDS Tags
+# Start Stop RDS and EC2 com Tags
 Este script em Python é executado como uma Lambda Function no AWS Lambda. Ele tem como objetivo iniciar e parar instâncias do Amazon RDS e instâncias EC2 de acordo com um determinado intervalo de tempo configurado como variáveis de ambiente na Lambda Function. O script filtra as instâncias por meio de suas tags e, em seguida, inicia ou para as instâncias elegíveis com base no horário atual.
 
 # Configuração
