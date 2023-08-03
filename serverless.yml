@@ -1,0 +1,32 @@
+service: start-stop-aws-rds-tags
+
+provider:
+  name: aws
+  runtime: python3.9
+  region: us-east-1
+  role: arn:aws:iam::xxxxxxxxxxxxx:role/start-stop-role 
+  environment:
+    START_TIME: '06:00'
+    STOP_TIME: '20:00'
+    TIMEZONE: 'America/Sao_Paulo'
+  vpc:
+    securityGroupIds:
+      - sg-0f2ee1232e941239f2a  #modify as needed
+    subnetIds:
+      - subnet-0da01237ec31f9a64 #modify as needed
+      - subnet-0f201232c081fa703 #modify as needed
+  logs:
+    level: INFO
+
+functions:
+  start-stop-rds:
+    handler: main.lambda_handler
+    memorySize: 128
+    events:
+      - schedule:
+          rate: cron(1 9,23 ? * MON-FRI *)
+          enabled: true
+
+package:
+  include:
+    - main.py
