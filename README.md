@@ -60,6 +60,10 @@ O projeto utiliza as seguintes bibliotecas Python:
 
 "Para adicionar ou remover a tag em todas as instâncias RDS e EC2 da conta e região específica em que você deseja executar o script Python, utilize o Shell Script tags.sh."
 
+Também é necessário configurar corretamente a VPC a ser usada, tais como subnet no arquivo serverless. 
+
+Atente-se a política necessária para o correto funcionamento do Lambda através da ROLE. Neste repositório você vai encontrar um exemplo de política que pode ser usada noemada como "policy-role-example.json".
+
 # Executando a Implantação com o Serverless Framework
 
 Para executar a implantação do projeto no AWS Lambda usando o Serverless Framework, siga os passos abaixo:
