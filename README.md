@@ -68,7 +68,7 @@ npm install -g serverless
 sls deploy
 ```
 
-4. O Serverless Framework irá implantar a função e configurar o agendamento de acordo com o cron especificado na seção functions do arquivo serverless.yml. No final da implantação, você verá a URL de invocação da função.
+3. O Serverless Framework irá implantar a função e configurar o agendamento de acordo com o cron especificado na seção functions do arquivo serverless.yml. No final da implantação, você verá a URL de invocação da função.
 
 Lembre-se de configurar corretamente as variáveis de ambiente e as informações de rede (VPC) conforme mencionado na seção de configuração. Além disso, substitua xxxxxxxxxxxxx pelo número da sua conta da AWS no ARN do IAM Role.
 
