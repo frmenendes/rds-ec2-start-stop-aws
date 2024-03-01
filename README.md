@@ -12,7 +12,7 @@ service: start-stop-aws-rds-tags
 
 provider:
   name: aws
-  runtime: python3.9
+  runtime: python3.11
   region: us-east-1
   role: arn:aws:iam::xxxxxxxxxxxxx:role/start-stop-role  # Substitua pelo ARN do IAM Role com as permissões necessárias
 ```
@@ -24,18 +24,7 @@ provider:
     STOP_TIME: '20:00'            # Horário de término do intervalo de tempo para parar as instâncias
     TIMEZONE: 'America/Sao_Paulo' # Fuso horário usado para determinar os horários de início e término
 ```
-3. Configuração de Rede (VPC):
-
-```bash
-  vpc:
-    securityGroupIds:
-      - sg-0f2ee1232e941239f2a    # IDs dos grupos de segurança da VPC onde as instâncias estão localizadas (modificar conforme necessário)
-    subnetIds:
-      - subnet-0da01237ec31f9a64   # IDs das sub-redes da VPC onde as instâncias estão localizadas (modificar conforme necessário)
-      - subnet-0f201232c081fa703   # IDs das sub-redes da VPC onde as instâncias estão localizadas (modificar conforme necessário)
-```
-
-4. Nível de Log para o CloudWatch Logs:
+3. Nível de Log para o CloudWatch Logs:
 
 ```bash
   logs:
