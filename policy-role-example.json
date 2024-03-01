@@ -2,30 +2,29 @@
     "Version": "2012-10-17",
     "Statement": [
         {
+            "Sid": "VisualEditor0",
             "Effect": "Allow",
             "Action": [
-                "logs:CreateLogGroup",
                 "logs:CreateLogStream",
+                "logs:CreateLogGroup",
                 "logs:PutLogEvents"
             ],
             "Resource": "arn:aws:logs:*:*:*"
         },
         {
+            "Sid": "VisualEditor1",
             "Effect": "Allow",
             "Action": [
                 "ec2:DescribeInstances",
                 "ec2:StartInstances",
-                "ec2:StopInstances"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
+                "rds:*",
+                "rds:ListTagsForResource",
                 "rds:DescribeDBInstances",
-                "rds:StartDBInstance",
+                "ec2:*",
+                "ec2:StopInstances",
                 "rds:StopDBInstance",
-                "rds:ListTagsForResource"
+                "events:*",
+                "rds:StartDBInstance"
             ],
             "Resource": "*"
         }
