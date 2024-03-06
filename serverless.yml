@@ -4,7 +4,7 @@ provider:
   name: aws
   runtime: python3.11
   region: us-east-1
-  role: arn:aws:iam::1234567891011:role/start-stop-rds-ec2
+  role: arn:aws:iam::xxxxxxxxxxxxxx:role/start-stop-rds-ec2
   environment:
     START_TIME: '07:00'
     STOP_TIME: '22:00'
@@ -16,6 +16,7 @@ functions:
   start-stop-rds:
     handler: main.lambda_handler
     memorySize: 256
+    timeout: 60
     events:
       - schedule:
           rate: cron(1 10,2 ? * MON-FRI *)
